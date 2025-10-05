@@ -1,0 +1,9 @@
+﻿namespace Ambev.DeveloperEvaluation.WebApi.Features.Carts.CreateCart;
+
+public class CreateCartItemRequest
+{
+    public Guid ProductId { get; set; }
+    public string ProductTitle { get; set; }
+
+    public int Quantity { get; set; }
+}
