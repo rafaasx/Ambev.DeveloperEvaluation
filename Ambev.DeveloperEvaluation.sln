@@ -51,17 +51,17 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C361795D-30EF-4513-B313-8622BE1AD313}"
 	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		..\.doc\auth-api.md = ..\.doc\auth-api.md
-		..\.doc\carts-api.md = ..\.doc\carts-api.md
-		..\.doc\frameworks.md = ..\.doc\frameworks.md
-		..\.doc\general-api.md = ..\.doc\general-api.md
-		..\.doc\overview.md = ..\.doc\overview.md
-		..\.doc\products-api.md = ..\.doc\products-api.md
-		..\.doc\project-structure.md = ..\.doc\project-structure.md
-		..\README.md = ..\README.md
-		..\.doc\tech-stack.md = ..\.doc\tech-stack.md
-		..\.doc\users-api.md = ..\.doc\users-api.md
+		.doc\auth-api.md = .doc\auth-api.md
+		.doc\carts-api.md = .doc\carts-api.md
+		.doc\frameworks.md = .doc\frameworks.md
+		.doc\general-api.md = .doc\general-api.md
+		LICENSE = LICENSE
+		.doc\overview.md = .doc\overview.md
+		.doc\products-api.md = .doc\products-api.md
+		.doc\project-structure.md = .doc\project-structure.md
+		README.md = README.md
+		.doc\tech-stack.md = .doc\tech-stack.md
+		.doc\users-api.md = .doc\users-api.md
 	EndProjectSection
 EndProject
 Global
