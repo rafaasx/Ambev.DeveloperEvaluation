@@ -4,7 +4,7 @@
 - Pre-requisites
   - Docker Desktop
   - Visual Studio 2022 or higher
-- Start Docker Descktop
+- Start Docker Desktop
 - Set docker-compose as Startup Project
 - Start debuging
 
