@@ -2,7 +2,7 @@
 
 namespace Ambev.DeveloperEvaluation.ORM.Extensions;
 
-public static class IQueryableExtensions
+public static class QueryableExtensions
 {
     public static IQueryable<T> SortBy<T>(this IQueryable<T> query, string? order)
     {

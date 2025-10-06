@@ -10,6 +10,7 @@
 
 ## Implementation Test -
 - Implemented by: Rafael Andrey da Silva Xaiver
+- Database PostgreSQL
 - Unit Tests
 - Integration Tests
 - APIs Documentation (Swagger)
