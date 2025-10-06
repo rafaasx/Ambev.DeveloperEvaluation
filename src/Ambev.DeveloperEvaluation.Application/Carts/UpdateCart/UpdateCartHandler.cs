@@ -24,11 +24,12 @@ public class UpdateCartHandler : IRequestHandler<UpdateCartCommand, UpdateCartRe
     {
         var cart = await _cartRepository.GetByIdAsync(command.Id, cancellationToken)
             ?? throw new KeyNotFoundException($"Cart with ID {command.Id} not found.");
+        _mapper.Map(command, cart);
 
         foreach (var product in command.Products)
         {
             var unitPrice = await _productPriceService.GetPriceAsync(product.ProductId, cancellationToken);
-            cart.UpdateProductQuantity(product.ProductId, product.Quantity, unitPrice, product.ProductTitle);
+            cart.UpdateProduct(product.ProductId, product.Quantity, unitPrice, product.ProductTitle);
         }
 
         var updatedCart = await _cartRepository.UpdateAsync(cart, cancellationToken);

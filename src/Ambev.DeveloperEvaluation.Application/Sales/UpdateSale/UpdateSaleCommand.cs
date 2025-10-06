@@ -1,14 +1,16 @@
 using MediatR;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale.Commands;
+namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale;
 
-public record UpdateSaleCommand(
-   Guid Id,
-    string SaleNumber,
-    DateTime SaleDate,
-    Guid CustomerId,
-    string CustomerName,
-    Guid BranchId,
-    string BranchName,
-    List<UpdateSaleItemCommand> Products
-) : IRequest<UpdateSaleResult>;
+public class UpdateSaleCommand : IRequest<UpdateSaleResult>
+{
+    public Guid Id { get; set; }
+    public string SaleNumber { get; set; }
+    public DateTime SaleDate { get; set; }
+    public Guid CustomerId { get; set; }
+    public string CustomerName { get; set; }
+    public Guid BranchId { get; set; }
+    public string BranchName { get; set; }
+    public List<UpdateSaleItemCommand> Products { get; set; }
+
+}

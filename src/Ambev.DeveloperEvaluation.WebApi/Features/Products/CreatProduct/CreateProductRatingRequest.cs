@@ -1,6 +1,6 @@
 ﻿namespace Ambev.DeveloperEvaluation.WebApi.Features.Products.CreatProduct;
 
-public class RatingRequest
+public class CreateProductRatingRequest
 {
     public double Rate { get; set; }
     public int Count { get; set; }

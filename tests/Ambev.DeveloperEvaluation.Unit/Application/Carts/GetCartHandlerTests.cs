@@ -29,7 +29,7 @@ public class GetCartHandlerTests
         var command = new GetCartCommand(cartId);
 
         var cart = new Cart(Guid.NewGuid(), DateTime.Now);
-        cart.UpdateProductQuantity(Guid.NewGuid(), 2, 10m, "productTitle1");
+        cart.UpdateProduct(Guid.NewGuid(), 2, 10m, "productTitle1");
         _cartRepository.GetByIdAsync(cartId, Arg.Any<CancellationToken>()).Returns(cart);
 
         var expected = new GetCartResult

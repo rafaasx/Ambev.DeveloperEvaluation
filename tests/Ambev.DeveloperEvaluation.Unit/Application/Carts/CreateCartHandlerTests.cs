@@ -42,7 +42,7 @@ public class CreateCartHandlerTests
         var cart = new Cart(userId, DateTime.Now);
         foreach (var item in products)
         {
-            cart.UpdateProductQuantity(item.ProductId, item.Quantity, 10m, "productTitle1");
+            cart.UpdateProduct(item.ProductId, item.Quantity, 10m, "productTitle1");
         }
         _cartRepository.CreateAsync(Arg.Any<Cart>(), Arg.Any<CancellationToken>())
             .Returns(cart);

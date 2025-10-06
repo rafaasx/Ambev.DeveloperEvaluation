@@ -3,11 +3,11 @@
 public class GetCartItemResponse
 {
     public Guid Id { get; set; }
-    public Guid ProductId { get; private set; }
+    public Guid ProductId { get; set; }
     public string ProductTitle { get; set; }
-    public int Quantity { get; private set; }
-    public decimal UnitPrice { get; private set; }
-    public decimal TotalPrice { get; private set; }
-    public decimal TotalPriceWithDiscount { get; private set; }
-    public decimal Discount { get; private set; }
+    public int Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+    public decimal TotalPrice { get; set; }
+    public decimal TotalPriceWithDiscount { get; set; }
+    public decimal Discount { get; set; }
 }

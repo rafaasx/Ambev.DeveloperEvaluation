@@ -16,8 +16,8 @@ public class CartPriceServiceTests
         var repository = Substitute.For<ICartRepository>();
         var cartId = Guid.NewGuid();
         var cart = new Cart(Guid.NewGuid(), DateTime.Now);
-        cart.UpdateProductQuantity(Guid.NewGuid(), 3, 10m, "productTitle1"); // 30
-        cart.UpdateProductQuantity(Guid.NewGuid(), 5, 10m, "productTitle2"); // 50 with discount 10% = 45
+        cart.UpdateProduct(Guid.NewGuid(), 3, 10m, "productTitle1"); // 30
+        cart.UpdateProduct(Guid.NewGuid(), 5, 10m, "productTitle2"); // 50 with discount 10% = 45
         repository.GetByIdAsync(cartId, Arg.Any<CancellationToken>()).Returns(cart);
         var service = new CartPriceService(repository);
 

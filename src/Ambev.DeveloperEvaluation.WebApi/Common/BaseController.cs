@@ -15,9 +15,8 @@ public class BaseController : ControllerBase
 
     protected IActionResult Ok<T>(T data)
     {
-        if (data?.GetType().IsGenericType == true &&
-                (data.GetType().GetGenericTypeDefinition() == typeof(ApiResponseWithData<>) ||
-                data.GetType().GetGenericTypeDefinition() == typeof(ApiResponse)))
+        if (data is ApiResponse || (data?.GetType().IsGenericType == true &&
+                (data.GetType().GetGenericTypeDefinition() == typeof(ApiResponseWithData<>))))
         {
             return base.Ok(data);
         }

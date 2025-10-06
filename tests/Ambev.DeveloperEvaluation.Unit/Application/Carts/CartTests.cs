@@ -14,7 +14,7 @@ public class CartTests
         var cart = new Cart(Guid.NewGuid(), DateTime.Now);
 
         // Act
-        cart.UpdateProductQuantity(productId, 2, 10m, "productTitle1"); // 2 unidades de 10 reais
+        cart.UpdateProduct(productId, 2, 10m, "productTitle1"); // 2 unidades de 10 reais
         var item = cart.Products.Single();
 
         // Assert
@@ -33,7 +33,7 @@ public class CartTests
         var productId = Guid.NewGuid();
 
         // Act
-        cart.UpdateProductQuantity(productId, 5, 10m, "productTitle1"); // 5 unidades
+        cart.UpdateProduct(productId, 5, 10m, "productTitle1"); // 5 unidades
         var item = cart.Products.Single();
 
         // Assert
@@ -49,7 +49,7 @@ public class CartTests
         var productId = Guid.NewGuid();
 
         // Act
-        cart.UpdateProductQuantity(productId, 12, 10m, "productTitle1");
+        cart.UpdateProduct(productId, 12, 10m, "productTitle1");
         var item = cart.Products.Single();
 
         // Assert
@@ -67,7 +67,7 @@ public class CartTests
         var productId = Guid.NewGuid();
 
         // Act
-        Action act = () => cart.UpdateProductQuantity(productId, quantity, 10m, "productTitle1");
+        Action act = () => cart.UpdateProduct(productId, quantity, 10m, "productTitle1");
 
         // Assert
         act.Should().Throw<ArgumentOutOfRangeException>();
@@ -80,8 +80,8 @@ public class CartTests
         var cart = new Cart(Guid.NewGuid(), DateTime.Now);
 
         // Act
-        cart.UpdateProductQuantity(Guid.NewGuid(), 2, 10m, "productTitle1"); // 20 sem desconto
-        cart.UpdateProductQuantity(Guid.NewGuid(), 5, 10m, "productTitle1"); // 50 com 10% desconto = 45
+        cart.UpdateProduct(Guid.NewGuid(), 2, 10m, "productTitle1"); // 20 sem desconto
+        cart.UpdateProduct(Guid.NewGuid(), 5, 10m, "productTitle1"); // 50 com 10% desconto = 45
 
         // Assert
         cart.TotalPrice.Should().BeApproximately(65m, 0.0001m);

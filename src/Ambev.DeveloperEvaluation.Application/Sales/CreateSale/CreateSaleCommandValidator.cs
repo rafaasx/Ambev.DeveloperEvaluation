@@ -1,4 +1,3 @@
-using Ambev.DeveloperEvaluation.Application.Sales.CreateSale.Commands;
 using FluentValidation;
 
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
@@ -13,7 +12,7 @@ public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
 
         RuleFor(x => x.SaleDate)
             .NotEmpty().WithMessage("Date is required.")
-            .LessThanOrEqualTo(DateTime.Now).WithMessage("Date cannot be in the future.");
+            .LessThanOrEqualTo(DateTime.UtcNow).WithMessage("Date cannot be in the future.");
 
         RuleFor(x => x.Products)
              .NotEmpty().WithMessage("Products list cannot be empty.")

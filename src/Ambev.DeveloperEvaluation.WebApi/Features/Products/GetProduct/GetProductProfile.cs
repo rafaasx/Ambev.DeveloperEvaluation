@@ -13,6 +13,6 @@ public class GetProductProfile : Profile
             .ConstructUsing(id => new GetProductCommand(id));
         CreateMap<Product, GetProductResult>();
         CreateMap<GetProductResult, GetProductResponse>();
-        CreateMap<GetRatingResult, RatingRequest>();
+        CreateMap<GetRatingResult, CreateProductRatingRequest>();
     }
 }

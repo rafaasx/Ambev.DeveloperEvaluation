@@ -3,13 +3,13 @@
 public class UpdateSaleRequest
 {
     public Guid Id { get; set; }
-    public string SaleNumber { get; private set; }
-    public DateTime SaleDate { get; private set; }
-    public decimal TotalAmount { get; private set; }
-    public bool IsCancelled { get; private set; }
-    public Guid CustomerId { get; private set; }
-    public string CustomerName { get; private set; }
-    public Guid BranchId { get; private set; }
-    public string BranchName { get; private set; }
+    public string SaleNumber { get; set; }
+    public DateTime SaleDate { get; set; }
+    public decimal TotalAmount { get; set; }
+    public bool IsCancelled { get; set; }
+    public Guid CustomerId { get; set; }
+    public string CustomerName { get; set; }
+    public Guid BranchId { get; set; }
+    public string BranchName { get; set; }
     public List<UpdateSaleItemRequest> Products { get; set; } = new();
 }

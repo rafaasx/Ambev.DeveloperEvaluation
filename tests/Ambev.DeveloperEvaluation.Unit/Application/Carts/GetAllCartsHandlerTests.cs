@@ -57,7 +57,7 @@ public class GetAllCartsHandlerTests
         for (int i = 0; i < 10; i++)
         {
             var cart = new Cart(userId: Guid.NewGuid(), DateTime.Now);
-            cart.UpdateProductQuantity(productId: Guid.NewGuid(), quantity: 1, 1, "productTitle");
+            cart.UpdateProduct(productId: Guid.NewGuid(), quantity: 1, 1, "productTitle");
             carts.Add(cart);
         }
 

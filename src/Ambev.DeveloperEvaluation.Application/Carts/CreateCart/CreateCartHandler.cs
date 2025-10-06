@@ -26,7 +26,7 @@ public class CreateCartHandler : IRequestHandler<CreateCartCommand, CreateCartRe
         foreach (var product in command.Products)
         {
             var unitPrice = await _productPriceService.GetPriceAsync(product.ProductId, cancellationToken);
-            cart.UpdateProductQuantity(product.ProductId, product.Quantity, unitPrice, product.ProductTitle);
+            cart.UpdateProduct(product.ProductId, product.Quantity, unitPrice, product.ProductTitle);
         }
 
         var createdCart = await _cartRepository.CreateAsync(cart, cancellationToken);

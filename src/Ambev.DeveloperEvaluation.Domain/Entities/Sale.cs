@@ -5,19 +5,19 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
 public class Sale : BaseEntity
 {
-    public string SaleNumber { get; private set; }
-    public DateTime SaleDate { get; private set; }
-    public decimal TotalAmount { get; private set; }
-    public bool IsCancelled { get; private set; }
-    public Guid CustomerId { get; private set; }
-    public string CustomerName { get; private set; }
-    public Guid BranchId { get; private set; }
-    public string BranchName { get; private set; }
+    public string SaleNumber { get; set; }
+    public DateTime SaleDate { get; set; }
+    public decimal TotalAmount { get; set; }
+    public bool IsCancelled { get; set; }
+    public Guid CustomerId { get; set; }
+    public string CustomerName { get; set; }
+    public Guid BranchId { get; set; }
+    public string BranchName { get; set; }
 
     private readonly List<SaleItem> _products = new();
     public IReadOnlyCollection<SaleItem> Products => _products.AsReadOnly();
 
-    protected Sale() { }
+    public Sale() { }
 
     public Sale(string saleNumber, DateTime saleDate, Guid customerId, string customerName, Guid branchId, string branchName)
     {
@@ -46,6 +46,11 @@ public class Sale : BaseEntity
     }
 
     public void AddItems(IEnumerable<SaleItem> items) => items.ToList().ForEach(item => AddItem(item));
+    public void UpdateItems(IEnumerable<SaleItem> items)
+    {
+        _products.Clear();
+        AddItems(items);
+    }
 
     public void Cancel(string reason)
     {

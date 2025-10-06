@@ -64,14 +64,9 @@ public class SaleRepository : ISaleRepository
 
     public async Task<Sale> UpdateAsync(Sale sale, CancellationToken cancellationToken = default)
     {
-        var existingSale = await _context.Sales
-                                         .AsNoTracking()
-                                         .SingleOrDefaultAsync(c => c.Id == sale.Id, cancellationToken: cancellationToken)
-            ?? throw new KeyNotFoundException("Sale not foound.");
-
-        _context.Entry(existingSale).CurrentValues.SetValues(sale);
+        _context.Update(sale);
         await _context.SaveChangesAsync(cancellationToken);
 
-        return existingSale;
+        return sale;
     }
 }

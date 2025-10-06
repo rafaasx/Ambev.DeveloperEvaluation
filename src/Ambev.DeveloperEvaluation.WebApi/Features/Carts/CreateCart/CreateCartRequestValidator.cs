@@ -13,7 +13,7 @@ public class CreateCartRequestValidator : AbstractValidator<CreateCartRequest>
 
         RuleFor(x => x.Date)
             .NotEmpty().WithMessage("Date is required.")
-            .LessThanOrEqualTo(DateTime.Now).WithMessage("Date cannot be in the future.");
+            .LessThanOrEqualTo(DateTime.UtcNow).WithMessage("Date cannot be in the future.");
 
         RuleFor(x => x.Products)
              .NotEmpty().WithMessage("Products list cannot be empty.")

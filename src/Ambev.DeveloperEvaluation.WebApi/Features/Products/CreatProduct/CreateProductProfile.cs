@@ -10,7 +10,7 @@ public class CreateProductProfile : Profile
         CreateMap<CreateProductRequest, CreateProductCommand>().ReverseMap();
         CreateMap<CreateProductResult, CreateProductResponse>();
         CreateMap<CreateProductRatingResult, CreateProductRatingResponse>().ReverseMap();
-        CreateMap<RatingRequest, CreateRatingCommand>().ReverseMap();
+        CreateMap<CreateProductRatingRequest, CreateRatingCommand>().ReverseMap();
     }
 }
 

@@ -4,9 +4,9 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
 public class Cart : BaseEntity
 {
-    public Guid UserId { get; private set; }
-    public DateTime Date { get; private set; }
-    public decimal TotalPrice { get; private set; }
+    public Guid UserId { get; set; }
+    public DateTime Date { get; set; }
+    public decimal TotalPrice { get; set; }
     public User User { get; set; }
     private readonly List<CartItem> _products = new();
     public IReadOnlyCollection<CartItem> Products => _products.AsReadOnly();
@@ -21,7 +21,7 @@ public class Cart : BaseEntity
         Date = DateTime.UtcNow;
     }
 
-    public void UpdateProductQuantity(Guid productId, int quantity, decimal unitPrice, string productTitle)
+    public void UpdateProduct(Guid productId, int quantity, decimal unitPrice, string productTitle)
     {
         if (quantity < 1 || quantity > 20)
         {

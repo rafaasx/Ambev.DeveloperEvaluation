@@ -16,5 +16,5 @@ public class UpdateProductRequest
 
     public string Image { get; set; } = string.Empty;
 
-    public RatingRequest Rating { get; set; } = new RatingRequest();
+    public CreateProductRatingRequest Rating { get; set; } = new CreateProductRatingRequest();
 }

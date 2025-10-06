@@ -5,7 +5,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Common;
 
 public class BaseEntity : IComparable<BaseEntity>
 {
-    public Guid Id { get; protected set; } = new Guid();
+    public Guid Id { get; set; } = new Guid();
 
     protected readonly List<IDomainEvent> _domainEvents = new();
     public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
